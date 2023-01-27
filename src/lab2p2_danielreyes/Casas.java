@@ -12,7 +12,21 @@ public class Casas {
     private int largo;
     private int numbano;
     private int numcuarto;
-
+    
+    public Casas(){
+        
+    }
+    
+    public Casas(int numcasa, int numbloque, Color color, int ancho, int largo, int numbano, int numcuarto){
+        this.numcasa = numcasa;
+        this.numbloque = numbloque;
+        this.color = color;
+        this.ancho = ancho;
+        this.largo = largo;
+        this.numbano = numbano;
+        this.numcuarto = numcuarto;
+    }
+    
     public int getNumcasa() {
         return numcasa;
     }

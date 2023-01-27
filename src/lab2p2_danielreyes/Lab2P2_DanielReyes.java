@@ -1,8 +1,10 @@
 
 package lab2p2_danielreyes;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JColorChooser;
 
 
 public class Lab2P2_DanielReyes {
@@ -21,26 +23,106 @@ public class Lab2P2_DanielReyes {
             resp = leer.nextInt();
 
             switch (resp) {
+
                 case 1: {
-                    int resp2;
-                    do{
-                        System.out.println("El que desea registrar");
+                    ArrayList lista = new ArrayList();
+                    int op;
+                    do {
+                        System.out.println("------Seleccion una opción------");
                         System.out.println("1- Casas");
                         System.out.println("2- Edificios");
                         System.out.println("3- Solares");
                         System.out.println("4- Volver");
-                        System.out.println("Ingrese una opción: ");
-                        resp2 = leer.nextInt();
-                        
-                        switch(resp2){
+                        op = leer.nextInt();
+
+                        switch (op) {
+                            case 1:{
+                                int resp2;
+
+                                do {
+                                    System.out.println("-----Menu de Casas------");
+                                    System.out.println("1- Crear");
+                                    System.out.println("2- Listar");
+                                    System.out.println("3- Modificar");
+                                    System.out.println("4- Borrar");
+                                    System.out.println("5- Comprar");
+                                    System.out.println("6- Volver");
+                                    System.out.println("Ingrese una opción: ");
+                                    resp2 = leer.nextInt();
+
+                                    switch (resp2) {
+                                        case 1:
+                                            lista.add(crearC());
+                                            break;
+                                        case 2: 
+                                            String salida="";
+                                            for (Object c : lista) {
+                                                if(c instanceof Casas){
+                                                    salida += "" + lista.indexOf(c)+ "- "+ c+ "\n";
+                                                    System.out.println(salida);
+                                                }
+                                            }
+                                            break;
+                                    }
+
+                                } while (resp2 != 6);
+                            }break;
+                            case 2:{
+                                int resp2;
+
+                                do {
+                                    System.out.println("-----Menu de Edificios------");
+                                    System.out.println("1- Crear");
+                                    System.out.println("2- Listar");
+                                    System.out.println("3- Modificar");
+                                    System.out.println("4- Borrar");
+                                    System.out.println("5- Comprar");
+                                    System.out.println("6- Volver");
+                                    System.out.println("Ingrese una opción: ");
+                                    resp2 = leer.nextInt();
+
+                                    switch (resp2) {
+                                        case 1:
+                                            lista.add(crearE());
+                                            break;
+                                    }
+
+                                } while (resp2 != 6);
+                            }break;
+                            case 3:{
+                                
+                                int resp2;
+
+                                do {
+                                    System.out.println("-----Menu de Solares------");
+                                    System.out.println("1- Crear");
+                                    System.out.println("2- Listar");
+                                    System.out.println("3- Modificar");
+                                    System.out.println("4- Borrar");
+                                    System.out.println("5- Comprar");
+                                    System.out.println("6- Volver");
+                                    System.out.println("Ingrese una opción: ");
+                                    resp2 = leer.nextInt();
+
+                                    switch (resp2) {
+                                        case 1:
+                                            lista.add(crearS());
+                                            break;
+                                    }
+
+                                } while (resp2 != 6);
                             
+
+                            }
+                                break;
                         }
-                    }while(resp2 != 4);
+                    } while (op != 4);
                     
+
                 }// fin de opcion1
                 break;
-                case 2:{
-                    
+                case 2: {
+
                 }// fin de opcion2
                 break;
                 case 3: {
@@ -95,5 +177,47 @@ public class Lab2P2_DanielReyes {
 
         } while (resp != 4);
     }//main
-
+    static Casas crearC(){
+        System.out.println("Ingrese el numero de casa: ");
+        int nc = leer.nextInt();
+        System.out.println("Ingrese el numero del bloque de casa: ");
+        int nb = leer.nextInt();
+        System.out.println("Ingrese el color: ");
+        Color c = JColorChooser.showDialog(null, "Seleccione un color", Color.BLACK);
+        System.out.println("Ingrese el ancho: ");
+        int a = leer.nextInt();
+        System.out.println("Ingrese el largo: ");
+        int l = leer.nextInt();
+        System.out.println("Ingrese numero de baños: ");
+        int nb2 = leer.nextInt();
+        System.out.println("Ingrese numero de cuartos: ");
+        int nc2 = leer.nextInt();
+        
+        Casas nueva;
+        return nueva = new Casas(nc, nb, c, a, l, nb2, nc2);
+    }
+    static Edificios crearE(){
+        System.out.println("Ingrese numero de pisos: ");
+        int p = leer.nextInt();
+        System.out.println("Ingrese la cantidad de locales: ");
+        int l = leer.nextInt();
+        System.out.println("Ingrese la direccion por referencia: ");
+        String d = leer.next();
+        
+        Edificios nueva;
+        return nueva = new Edificios(p, l, d);
+    }
+    
+    static Solares crearS(){
+        System.out.println("Ingrese el ancho: ");
+        int a = leer.nextInt();
+        System.out.println("Ingrese el largo: ");
+        int l = leer.nextInt();
+        System.out.println("Ingrese el area: ");
+        int area = leer.nextInt();
+        
+        Solares nuevo;
+        return nuevo = new Solares(a,l,area);
+                
+    }
 }
