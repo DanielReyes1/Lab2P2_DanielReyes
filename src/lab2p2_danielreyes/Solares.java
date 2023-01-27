@@ -46,7 +46,7 @@ public class Solares {
 
     @Override
     public String toString() {
-        return "Solares{" + "ancho=" + ancho + ", largo=" + largo + ", area=" + area + '}';
+        return "Solares{" + "ancho=" + ancho + ", largo=" + largo + ", area=" + ancho*largo + '}';
     }
 
 }

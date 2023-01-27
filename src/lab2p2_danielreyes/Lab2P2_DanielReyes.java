@@ -55,13 +55,30 @@ public class Lab2P2_DanielReyes {
                                             lista.add(crearC());
                                             break;
                                         case 2: 
+                                            System.out.println("----LISTA-------");
                                             String salida="";
                                             for (Object c : lista) {
                                                 if(c instanceof Casas){
                                                     salida += "" + lista.indexOf(c)+ "- "+ c+ "\n";
                                                     System.out.println(salida);
+                                                    salida= "";
                                                 }
                                             }
+                                            break;
+                                        case 3:
+                                            System.out.println("------LISTA-------");
+                                            String salid="";
+                                            for (Object c : lista) {
+                                                if(c instanceof Casas){
+                                                    salid += "" + lista.indexOf(c)+ "- "+ c+ "\n";
+                                                    System.out.println(salid);
+                                                    salid="";
+                                                }
+                                            }
+                                            System.out.println("Posicion a modificar: ");
+                                            int pos = leer.nextInt();
+                                            lista.remove(pos);
+                                            lista.add(pos, crearC());
                                             break;
                                     }
 
@@ -85,7 +102,37 @@ public class Lab2P2_DanielReyes {
                                         case 1:
                                             lista.add(crearE());
                                             break;
+                                        case 2:
+                                            System.out.println("----LISTA-------");
+                                            String salida="";
+                                            for (Object e : lista) {
+                                                if(e instanceof Edificios){
+                                                    salida += "" + lista.indexOf(e)+ "- "+ e+ "\n";
+                                                    System.out.println(salida);
+                                                    salida = "";
+                                                }
+                                            }
+                                            break;
+                                        case 3:
+                                            System.out.println("------LISTA-------");
+                                            String salid="";
+                                            for (Object e : lista) {
+                                                if(e instanceof Edificios){
+                                                    salid += "" + lista.indexOf(e)+ "- "+ e+ "\n";
+                                                    System.out.println(salid);
+                                                    salid="";
+                                                }
+                                            }
+                                            System.out.println("Posicion a modificar: ");
+                                            int pos = leer.nextInt();
+                                            if(pos < lista.size() && pos>= 0 ){
+                                            lista.remove(pos);
+                                            lista.add(pos, crearE());
+                                            break;
+                                            }
                                     }
+
+                                            
 
                                 } while (resp2 != 6);
                             }break;
@@ -108,6 +155,33 @@ public class Lab2P2_DanielReyes {
                                         case 1:
                                             lista.add(crearS());
                                             break;
+                                        case 2:
+                                            System.out.println("----LISTA-------");
+                                            String salida="";
+                                            for (Object s : lista) {
+                                                if(s instanceof Solares){
+                                                    salida += "" + lista.indexOf(s)+ "- "+ s+ "\n";
+                                                    System.out.println(salida);
+                                                    salida = "";
+                                                }
+                                            }
+                                            break;
+                                        case 3:
+                                            System.out.println("------LISTA-------");
+                                            String salid="";
+                                            for (Object s : lista) {
+                                                if(s instanceof Solares){
+                                                    salid += "" + lista.indexOf(s)+"- "+ s+ "\n";
+                                                    System.out.println(salid);
+                                                    salid="";
+                                                }
+                                            }
+                                            System.out.println("Posicion a modificar: ");
+                                            int pos = leer.nextInt();
+                                            lista.remove(pos);
+                                            lista.add(pos, crearS());
+                                            break;
+                                    
                                     }
 
                                 } while (resp2 != 6);
@@ -213,8 +287,8 @@ public class Lab2P2_DanielReyes {
         int a = leer.nextInt();
         System.out.println("Ingrese el largo: ");
         int l = leer.nextInt();
-        System.out.println("Ingrese el area: ");
-        int area = leer.nextInt();
+        
+        int area = l * a;
         
         Solares nuevo;
         return nuevo = new Solares(a,l,area);
