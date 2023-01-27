@@ -19,58 +19,79 @@ public class Lab2P2_DanielReyes {
             System.out.println("4- Salir del sistema");
             System.out.println("Ingrese una opción: ");
             resp = leer.nextInt();
-        
-            switch (resp){
+
+            switch (resp) {
                 case 1: {
+                    int resp2;
+                    do{
+                        System.out.println("El que desea registrar");
+                        System.out.println("1- Casas");
+                        System.out.println("2- Edificios");
+                        System.out.println("3- Solares");
+                        System.out.println("4- Volver");
+                        System.out.println("Ingrese una opción: ");
+                        resp2 = leer.nextInt();
+                        
+                        switch(resp2){
+                            
+                        }
+                    }while(resp2 != 4);
                     
-                int resp2;
-                do {
-                    System.out.println("1- Sign up");
-                    System.out.println("2- Log in");
-                    System.out.println("3- Log out");
-                    System.out.println("4- Volver");
-                    System.out.println("Ingrese una opción: ");
-                    resp2 = leer.nextInt();
+                }// fin de opcion1
+                break;
+                case 2:{
+                    
+                }// fin de opcion2
+                break;
+                case 3: {
+                    int resp3;
+                    do {
+                        System.out.println("1- Sign up");
+                        System.out.println("2- Log in");
+                        System.out.println("3- Log out");
+                        System.out.println("4- Volver");
+                        System.out.println("Ingrese una opción: ");
+                        resp3 = leer.nextInt();
 
-                    String name;
-                    int edad;
-                    String user;
-                    String password;
-                    switch (resp2) {
-                        case 1:
-                            ArrayList lista = new ArrayList();
-                            System.out.println("Ingrese su nombre: ");
-                            name = leer.next();
-                            lista.add(name);
-                            System.out.println("Ingrese su edad: ");
-                            edad = leer.nextInt();
-                            lista.add(edad);
-                            System.out.println("Ingrese su username: ");
-                            user = leer.next();
-                            lista.add(user);
-                            System.out.println("Ingrese su contraseña");
-                            password = leer.next();
-                            lista.add(password);
+                        String name;
+                        int edad;
+                        String user;
+                        String password;
+                        switch (resp3) {
+                            case 1:
+                                ArrayList lista = new ArrayList();
+                                System.out.println("Ingrese su nombre: ");
+                                name = leer.next();
+                                lista.add(name);
+                                System.out.println("Ingrese su edad: ");
+                                edad = leer.nextInt();
+                                lista.add(edad);
+                                System.out.println("Ingrese su username: ");
+                                user = leer.next();
+                                lista.add(user);
+                                System.out.println("Ingrese su contraseña");
+                                password = leer.next();
+                                lista.add(password);
 
-                            //Usuario u = new Usuario(name, edad, user, password);
-                            break;
-                        case 2:
-                            System.out.println("Ingrese el usuario: ");
-                            String usuario = leer.next();
-                            System.out.println("Ingrese la contraseña: ");
-                            String contra = leer.next();
-                            
-                            break;
-                            
-                        case 3:
-                            break;
+                                //Usuario u = new Usuario(name, edad, user, password);
+                                break;
+                            case 2:
+                                System.out.println("Ingrese el usuario: ");
+                                String usuario = leer.next();
+                                System.out.println("Ingrese la contraseña: ");
+                                String contra = leer.next();
 
-                    }
-                } while (resp != 4);
+                                break;
 
-            }// opcion 3
-            }
-            
+                            case 3:
+                                break;
+
+                        }
+                    } while (resp != 4);
+
+                }// fin opcion 3
+                break;
+            }// fin switch
 
         } while (resp != 4);
     }//main
