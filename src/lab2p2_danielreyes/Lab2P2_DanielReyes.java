@@ -66,7 +66,7 @@ public class Lab2P2_DanielReyes {
                                             }
                                             break;
                                         case 3:
-                                            System.out.println("------LISTA-------");
+                                            System.out.println("------OPCIONES-------");
                                             String salid="";
                                             for (Object c : lista) {
                                                 if(c instanceof Casas){
@@ -77,9 +77,29 @@ public class Lab2P2_DanielReyes {
                                             }
                                             System.out.println("Posicion a modificar: ");
                                             int pos = leer.nextInt();
+                                            if(pos < lista.size() && pos>= 0 ){
                                             lista.remove(pos);
                                             lista.add(pos, crearC());
                                             break;
+                                            }
+                                        case 4: 
+                                            System.out.println("------OPCIONES-------");
+                                            String sali="";
+                                            for (Object c : lista) {
+                                                if(c instanceof Casas){
+                                                    sali += "" + lista.indexOf(c)+ "- "+ c+ "\n";
+                                                    System.out.println(sali);
+                                                    sali="";
+                                                }
+                                            }
+                                            System.out.println("Posicion a eliminar: ");
+                                            int posi = leer.nextInt();
+                                            if(posi < lista.size() && posi>= 0 ){
+                                            lista.remove(posi);
+                                            
+                                            }
+                                            break;
+                                            
                                     }
 
                                 } while (resp2 != 6);
@@ -114,7 +134,7 @@ public class Lab2P2_DanielReyes {
                                             }
                                             break;
                                         case 3:
-                                            System.out.println("------LISTA-------");
+                                            System.out.println("------OPCIONES-------");
                                             String salid="";
                                             for (Object e : lista) {
                                                 if(e instanceof Edificios){
@@ -130,6 +150,23 @@ public class Lab2P2_DanielReyes {
                                             lista.add(pos, crearE());
                                             break;
                                             }
+                                            case 4: 
+                                            System.out.println("------OPCIONES-------");
+                                            String sali="";
+                                            for (Object e : lista) {
+                                                if(e instanceof Edificios){
+                                                    sali += "" + lista.indexOf(e)+ "- "+ e+ "\n";
+                                                    System.out.println(sali);
+                                                    sali="";
+                                                }
+                                            }
+                                            System.out.println("Posicion a eliminar: ");
+                                            int posi = leer.nextInt();
+                                            if(posi < lista.size() && posi>= 0 ){
+                                            lista.remove(posi);
+                                            
+                                            }
+                                            break;
                                     }
 
                                             
@@ -167,7 +204,7 @@ public class Lab2P2_DanielReyes {
                                             }
                                             break;
                                         case 3:
-                                            System.out.println("------LISTA-------");
+                                            System.out.println("------OPCIONES-------");
                                             String salid="";
                                             for (Object s : lista) {
                                                 if(s instanceof Solares){
@@ -178,8 +215,27 @@ public class Lab2P2_DanielReyes {
                                             }
                                             System.out.println("Posicion a modificar: ");
                                             int pos = leer.nextInt();
+                                            if(pos < lista.size() && pos>= 0 ){
                                             lista.remove(pos);
                                             lista.add(pos, crearS());
+                                            break;
+                                            }
+                                            case 4: 
+                                            System.out.println("------OPCIONES-------");
+                                            String sali="";
+                                            for (Object s : lista) {
+                                                if(s instanceof Solares){
+                                                    sali += "" + lista.indexOf(s)+ "- "+ s+ "\n";
+                                                    System.out.println(sali);
+                                                    sali="";
+                                                }
+                                            }
+                                            System.out.println("Posicion a eliminar: ");
+                                            int posi = leer.nextInt();
+                                            if(posi < lista.size() && posi>= 0 ){
+                                            lista.remove(posi);
+                                            
+                                            }
                                             break;
                                     
                                     }
