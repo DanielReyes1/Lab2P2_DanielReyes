@@ -12,6 +12,7 @@ public class Casas {
     private int largo;
     private int numbano;
     private int numcuarto;
+    private String dueno;
     
     public Casas(){
         
