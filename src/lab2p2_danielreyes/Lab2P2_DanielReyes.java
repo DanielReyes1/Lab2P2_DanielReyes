@@ -295,7 +295,7 @@ public class Lab2P2_DanielReyes {
                                 String contra = leer.next();
                                 int cont = 0;
                                 for (int i = 0; i < datos.size(); i++) {
-                                    if(usuario == datos.get(i)){
+                                    if(usuario.equals(datos.get(i))){
                                         cont++;
                                         for (int j = 0; j < datos.size(); j++) {
                                             if(contra == datos.get(j));
@@ -305,7 +305,7 @@ public class Lab2P2_DanielReyes {
                                         }
                                     }
                                 }
-                                if(cont == 2){
+                                if(cont >= 1){
                                     System.out.println("Ha ingresado adecuadamente");
                                 }
                                 else{
@@ -325,11 +325,10 @@ public class Lab2P2_DanielReyes {
                                 }
                                 
                                 break;
-                            case 4: 
-                                break;
+                            
                         }
                         
-                    } while (resp != 4);
+                    } while (resp3 != 4);
 
                 }// fin opcion 3
                 break;
